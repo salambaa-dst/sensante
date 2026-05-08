@@ -101,5 +101,20 @@ print("\nProbabilites par classe :")
 for classe, proba in zip(model_loaded.classes_, probas):
     bar = '#' * int(proba * 30)
     print(f"  {classe:8s} : {proba:.1%} {bar}")
+# ===== VISUALISER LA MATRICE DE CONFUSION =====
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+plt.figure(figsize=(8, 6))
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
+            xticklabels=model.classes_,
+            yticklabels=model.classes_)
+plt.xlabel('Prediction du modele')
+plt.ylabel('Vrai diagnostic')
+plt.title('Matrice de confusion - SenSante')
+plt.tight_layout()
+plt.savefig('notebooks/confusion_matrix.png', dpi=150)
+plt.show()
+print("Matrice de confusion affichee et sauvegardee !")
 
 print("\n===== Lab 2 termine ! =====")
