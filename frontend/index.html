@@ -344,7 +344,8 @@
 </div>
 
 <script>
-    const API_URL = "http://localhost:8000";
+    // APRÈS (Lab 6) :
+const API_URL = "";
 
     async function lancerDiagnostic() {
         const age         = parseInt(document.getElementById("age").value);
@@ -355,6 +356,9 @@
         const toux        = document.getElementById("toux").checked ? 1 : 0;
         const fatigue     = document.getElementById("fatigue").checked ? 1 : 0;
         const maux_tete   = document.getElementById("maux_tete").checked ? 1 : 0;
+    
+
+
 
         if (!age || !temperature || !tension) {
             alert("Veuillez remplir tous les champs obligatoires.");
